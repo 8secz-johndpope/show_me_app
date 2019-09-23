@@ -33,20 +33,19 @@ let router = new Router({
 })
 
 router.beforeEach((to, from, next) => {
-  const requiresAuth = to.matched.some(record => record.meta.requiresAuth)
+  let requiresAuth = to.matched.some(record => record.meta.requiresAuth)
+  let currentUser = firebase.auth().currentUser
   if (requiresAuth) {
     // このルートはログインされているかどうか認証が必要です。
     // もしされていないならば、ログインページにリダイレクトします。
-    firebase.auth().onAuthStateChanged(function (user) {
-      if (user) {
-        next()
-      } else {
-        next({
-          path: '/signin',
-          query: { redirect: to.fullPath }
-        })
-      }
-    })
+    if (!currentUser) {
+      next({
+        path: '/signin',
+        query: { redirect: to.fullPath }
+      })
+    } else {
+      next()
+    }
   } else {
     next() // next() を常に呼び出すようにしてください!
   }
