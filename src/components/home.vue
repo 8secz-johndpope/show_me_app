@@ -1,25 +1,33 @@
 <template>
   <div class="home">
     <div>
-  <b-navbar toggleable="md" type="dark" variant="info">
-  <b-navbar-toggle target="nav_collapse"></b-navbar-toggle>
-  <b-navbar-brand href="#">NavBar</b-navbar-brand>
-  <b-collapse is-nav id="nav_collapse">
-    <b-navbar-nav>
-      <b-nav-item href="#">Link</b-nav-item>
-      <b-nav-item href="#" disabled>Disabled</b-nav-item>
-    </b-navbar-nav>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">Navbar</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
 
-    <!-- Right aligned nav items -->
-    <b-navbar-nav class="ml-auto">
-      <b-nav-form>
-        <b-form-input size="sm" class="mr-sm-2" type="text" placeholder="Search"/>
-        <b-button size="sm" class="my-2 my-sm-0" type="submit">Search</b-button>
-            <b-button class="btn btn-primary" @click="signOut">Sign out</b-button>
-      </b-nav-form>
-    </b-navbar-nav>
-  </b-collapse>
-  </b-navbar>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Link</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link disabled" href="#">Disabled</a>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+  </div>
+   <div>
+            <button class="btn btn-primary" @click="signOut">Sign out</button>
+      </div>
+</nav>
 
 </div>
   </div>
