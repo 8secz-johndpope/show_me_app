@@ -1,11 +1,13 @@
 import Vue from 'vue'
+import BootstrapVue from "bootstrap-vue"
 import Router from 'vue-router'
 import home from '@/components/home'
 import Signup from '@/components/Signup'
 import Signin from '@/components/Signin'
 import firebase from 'firebase'
 
-
+import "bootstrap/dist/css/bootstrap.min.css"
+import "bootstrap-vue/dist/bootstrap-vue.css"
 
 Vue.use(Router)
 
