@@ -1,9 +1,11 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import HelloWorld from '@/components/HelloWorld'
+import home from '@/components/home'
 import Signup from '@/components/Signup'
 import Signin from '@/components/Signin'
 import firebase from 'firebase'
+
+
 
 Vue.use(Router)
 
@@ -14,9 +16,9 @@ let router = new Router({
       redirect: 'signin'
     },
     {
-      path: '/',
-      name: 'HelloWorld',
-      component: HelloWorld,
+      path: '/home',
+      name: 'home',
+      component: home,
       meta: { requiresAuth: true }
     },
     {
@@ -25,7 +27,7 @@ let router = new Router({
       component: Signup
     },
     {
-      path: '/signin',
+      path: '/',
       name: 'Signin',
       component: Signin
     }
@@ -40,7 +42,7 @@ router.beforeEach((to, from, next) => {
     // もしされていないならば、ログインページにリダイレクトします。
     if (!currentUser) {
       next({
-        path: '/signin',
+        path: '/',
         query: { redirect: to.fullPath }
       })
     } else {

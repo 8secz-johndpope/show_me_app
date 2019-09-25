@@ -1,5 +1,5 @@
 <template>
-  <div class="hello">
+  <div class="home">
     <h1>Hello {{ name }}!!</h1>
     <h1>{{ msg }}</h1>
     <h2>Essential Links</h2>
@@ -18,7 +18,7 @@
       <li><a href="http://vue-loader.vuejs.org/" target="_blank">vue-loader</a></li>
       <li><a href="https://github.com/vuejs/awesome-vue" target="_blank">awesome-vue</a></li>
     </ul>
-    <button @click="signOut">Sign out</button>
+    <button class="btn btn-primary" @click="signOut">Sign out</button>
   </div>
 </template>
 
@@ -26,7 +26,7 @@
 import firebase from 'firebase'
 
 export default {
-  name: 'HelloWorld',
+  name: 'home',
   data () {
     return {
       msg: 'Welcome to Your Vue.js App',
@@ -36,25 +36,12 @@ export default {
   methods: {
     signOut: function () {
       firebase.auth().signOut().then(() => {
-        this.$router.push('/signin')
+        this.$router.push('/')
       })
     }
   }
 }
 </script>
 <style scoped>
-h1, h2 {
-  font-weight: normal;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
-}
+@import "./css/home.css";
 </style>
