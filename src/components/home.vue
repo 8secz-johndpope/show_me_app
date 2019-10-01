@@ -30,26 +30,29 @@
     </b-collapse>
   </b-navbar>
   </div>
-  
-  <b-list-group>
-  <b-list-group-item>Cras justo odio</b-list-group-item>
-  <b-list-group-item>Dapibus ac facilisis in</b-list-group-item>
-  <b-list-group-item>Morbi leo risus</b-list-group-item>
-  <b-list-group-item>Porta ac consectetur ac</b-list-group-item>
-  <b-list-group-item>Vestibulum at eros</b-list-group-item>
-</b-list-group>
+<div class="post">
+<div class="mypost">
+  <input v-model="msg" placeholder="edit me">
+<p>Message is: {{ msg }}</p>
+</div>
+<div class="friendspost">
+test
+</div>
+</div>
+  <footer>
+      (c)copy right
+    </footer>
 </div>
 </template>
-
-
 <script>
+
 import firebase from 'firebase'
 
 export default {
   name: 'home',
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App',
+      msg: '',
       name: firebase.auth().currentUser.email
     }
   },

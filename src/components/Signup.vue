@@ -4,8 +4,7 @@
     <input type="text" placeholder="Username" v-model="username">
     <input type="password" placeholder="Password" v-model="password">
     <button @click="signUp">Register</button>
-    <p>Do you have an account? 
-      <router-link to="/">sign in now!!</router-link>
+    <p>Do you have an account?<router-link to="/">sign in now!!</router-link>
     </p>
   </div>
 </template>

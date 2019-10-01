@@ -1,18 +1,18 @@
+.app{
+  height: 100%;
+}
 .navbardiv{
   background-color: #FFF
 }
-.collapse{
-  background-color: #FFF
-
+.list-group{
+  width: 20%;
+  margin-right: 20%;
 }
-.list-group-item{
-  background-color: #FFB000;
 
-}
-.list-group {
-width : calc(100% / 5) ;
 
-}
+
 .navbar{
-  /* background-color: blueviolet; */
+  height: 100%;
+}
+.mypost{
 }

@@ -13,16 +13,16 @@ Vue.use(BootstrapVue)
 Vue.config.productionTip = false
 
 const firebaseConfig = {
-  apiKey: "AIzaSyDKzVOULbKvuvzptVXO-Wt7vz5gvbtohXI",
-  authDomain: "webproject-ef5ac.firebaseapp.com",
-  databaseURL: "https://webproject-ef5ac.firebaseio.com",
-  projectId: "webproject-ef5ac",
-  storageBucket: "",
-  messagingSenderId: "823336720817",
-  appId: "1:823336720817:web:cef9b067ab597054f64590"
-};
+  apiKey: 'AIzaSyDKzVOULbKvuvzptVXO-Wt7vz5gvbtohXI',
+  authDomain: 'webproject-ef5ac.firebaseapp.com',
+  databaseURL: 'https://webproject-ef5ac.firebaseio.com',
+  projectId: 'webproject-ef5ac',
+  storageBucket: '',
+  messagingSenderId: '823336720817',
+  appId: '1:823336720817:web:cef9b067ab597054f64590'
+}
 
-firebase.initializeApp(firebaseConfig);
+firebase.initializeApp(firebaseConfig)
 
 /* eslint-disable no-new */
 new Vue({
