@@ -54,7 +54,7 @@ export default {
   data () {
     return {
       msg: '',
-      name: firebase.auth().currentUser.email
+      user: firebase.auth().currentUser
     }
   },
   methods: {
@@ -64,14 +64,17 @@ export default {
       })
     },
     post: function (){
- firebase.auth().onAuthStateChanged(function(name) {
-  if (name) {
-    alert(name.email)
-    console.log(name)
-  } else {
-    alert("non")
-  }
-})
+//  firebase.auth().onAuthStateChanged(function(name) {
+//   if (name) {
+//     alert(name.email)
+//     console.log(name)
+//     console.log(this.msg)
+//   } else {
+//     alert("non")
+//   }
+// })
+// 上記はいらないかもしれない
+alert(this.user.email)
     }
   }
 }
