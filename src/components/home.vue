@@ -36,9 +36,10 @@
 <p>Message is: {{ msg }}</p>
 </div>
 <div class="friendspost">
-test
 </div>
+  <b-button @click="post">I am a Button</b-button>
 </div>
+
   <footer>
       (c)copy right
     </footer>
@@ -61,6 +62,16 @@ export default {
       firebase.auth().signOut().then(() => {
         this.$router.push('/')
       })
+    },
+    post: function (){
+ firebase.auth().onAuthStateChanged(function(name) {
+  if (name) {
+    alert(name.email)
+    console.log(name)
+  } else {
+    alert("non")
+  }
+})
     }
   }
 }

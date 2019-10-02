@@ -17,7 +17,7 @@ const firebaseConfig = {
   authDomain: 'webproject-ef5ac.firebaseapp.com',
   databaseURL: 'https://webproject-ef5ac.firebaseio.com',
   projectId: 'webproject-ef5ac',
-  storageBucket: '',
+  storageBucket: 'webproject-ef5ac.appspot.com',
   messagingSenderId: '823336720817',
   appId: '1:823336720817:web:cef9b067ab597054f64590'
 }
