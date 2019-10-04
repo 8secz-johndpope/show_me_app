@@ -47,7 +47,7 @@
 </template>
 <script>
 
-import firebase from 'firebase'
+import firebase, { firestore } from 'firebase'
 
 export default {
   name: 'home',
@@ -64,17 +64,9 @@ export default {
       })
     },
     post: function (){
-//  firebase.auth().onAuthStateChanged(function(name) {
-//   if (name) {
-//     alert(name.email)
-//     console.log(name)
-//     console.log(this.msg)
-//   } else {
-//     alert("non")
-//   }
-// })
-// 上記はいらないかもしれない
-alert(this.user.email)
+      firebase.firestore().collection(this.user.email).add({
+    msg: this.msg
+})
     }
   }
 }
