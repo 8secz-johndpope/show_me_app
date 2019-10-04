@@ -1,58 +1,57 @@
-import Vue from 'vue'
-import Router from 'vue-router'
-import home from '@/components/home'
-import Signup from '@/components/Signup'
-import Signin from '@/components/Signin'
-import firebase from 'firebase'
+import Vue from "vue";
+import Router from "vue-router";
+import firebase from "firebase";
 
-import 'bootstrap/dist/css/bootstrap.min.css'
-import 'bootstrap-vue/dist/bootstrap-vue.css'
+import Login from "@/components/Login";
+import Dashboard from "@/components/Dashboard";
+import Settings from "@/components/Settings";
 
-Vue.use(Router)
+Vue.use(Router);
 
-let router = new Router({
-  mode: 'history',
+const router = new Router({
+  mode: "history",
   routes: [
     {
-      path: '*',
-      redirect: 'signin'
+      path: "*",
+      redirect: "/dashboard"
     },
     {
-      path: '/home',
-      name: 'home',
-      component: home,
-      meta: { requiresAuth: true }
+      path: "/login",
+      name: "Login",
+      component: Login
     },
     {
-      path: '/signup',
-      name: 'Signup',
-      component: Signup
+      path: "/dashboard",
+      name: "Dashboard",
+      component: Dashboard,
+      meta: {
+        requiresAuth: true
+      }
     },
     {
-      path: '/',
-      name: 'Signin',
-      component: Signin
+      path: "/settings",
+      name: "Settings",
+      component: Settings,
+      meta: {
+        requiresAuth: true
+      }
     }
   ]
-})
+});
 
 router.beforeEach((to, from, next) => {
-  let requiresAuth = to.matched.some(record => record.meta.requiresAuth)
-  let currentUser = firebase.auth().currentUser
-  if (requiresAuth) {
-    // このルートはログインされているかどうか認証が必要です。
-    // もしされていないならば、ログインページにリダイレクトします。
-    if (!currentUser) {
-      next({
-        path: '/',
-        query: { redirect: to.fullPath }
-      })
-    } else {
-      next()
-    }
+  const requiresAuth = to.matched.some(x => x.meta.requiresAuth);
+  const currentUser = firebase.auth().currentUser;
+  if (requiresAuth && !currentUser) {
+    next("/login");
+  } else if (currentUser && to.name == "Login") {
+    router.push({ name: "Dashboard" });
+    next("/dashboard");
+  } else if (requiresAuth && currentUser) {
+    next();
   } else {
-    next() // next() を常に呼び出すようにしてください!
+    next();
   }
-})
+});
 
-export default router
+export default router;

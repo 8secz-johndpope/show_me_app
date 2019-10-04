@@ -1,39 +1,19 @@
 <template>
   <div id="app">
+    <Navigation v-if="currentUser"></Navigation>
     <router-view/>
-      <div class="wrapper">
-  </div>
   </div>
 </template>
 
 <script>
+import { mapState } from "vuex";
+import Navigation from "./components/Navigation.vue";
 export default {
-  name: 'App'
-}
+  components: { Navigation },
+  computed: {
+    ...mapState(["currentUser"])
+  }
+};
 </script>
-
-<style>
-html,body{
-  height: 100%;
-  padding: 0%;
-}
-#app {
-
-  height: 100%;
-}
-
-.wrapper{
-    min-height: 100％;
-    margin-bottom: 0%
-}
-
-footer{
-    /*footerの装飾*/
-    width: 100%;
-    background-color: #89c7de;
-    color: #fff;
-    text-align: center;
-    margin: 0%;
-    padding-bottom: 0%
-}
+<style lang="scss" rel="stylesheet/scss">
 </style>
