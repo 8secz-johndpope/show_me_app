@@ -64,7 +64,7 @@ export default {
       })
     },
     post: function (){
-      firebase.firestore().collection(this.user.email).add({
+      firebase.firestore().doc(this.user.email+'/posts').collection("postsid").add({
     msg: this.msg
 })
     }
