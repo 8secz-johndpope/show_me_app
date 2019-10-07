@@ -29,3 +29,7 @@ npm test
 
 For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
 # show_me_app
+今後の方針
+>相手のプロフィール画面に行けばフォローできる
+>プログラミングという項目を自分のプロフィール欄に追加
+>プッシュ通知

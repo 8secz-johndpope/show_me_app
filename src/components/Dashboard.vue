@@ -47,6 +47,9 @@
             <p>{{ post.content | trimLength }}</p>
             <ul>
               <li>
+                <a>follower</a>
+              </li>
+              <li>
                 <a @click="openCommentModal(post)">comments {{ post.comments }}</a>
                 <!-- comment modal -->
                 <transition name="fade">
@@ -115,6 +118,11 @@
     </section>
   </div>
 </template>
+<style scoped>
+li{
+  list-style: none
+}
+</style>
 
 <script>
 import { mapState } from "vuex";

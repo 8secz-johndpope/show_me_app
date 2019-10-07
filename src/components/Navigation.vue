@@ -20,6 +20,12 @@
     </section>
   </header>
 </template>
+<style scoped>
+li {
+  display: inline-block;
+  width: 25%;
+}
+</style>
 
 <script>
 const fb = require("../firebaseConfig.js");
