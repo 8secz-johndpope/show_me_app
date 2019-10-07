@@ -42,6 +42,9 @@
         </transition>
         <div v-if="posts.length">
           <div v-for="post in posts" class="post" v-bind:key="post.id">
+            <h5>
+              <router-link v-bind:to="{ name : 'Settings', params : { userId: post.userId }}">{{ post.userName }}</router-link>
+            </h5>
              <!-- <h5><router-link to="post.userId">{{ post.userName }}</router-link></h5>< -->
             <h5>{{ post.userName }}</h5><!-- リンクに飛ぶようにする -->
             <span>{{ post.createdOn | formatDate }}</span>

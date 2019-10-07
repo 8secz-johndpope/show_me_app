@@ -29,7 +29,7 @@ const router = new Router({
       }
     },
     {
-      path: "/settings",
+      path: "/settings/:userId",
       name: "Settings",
       component: Settings,
       meta: {
