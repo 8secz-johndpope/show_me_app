@@ -3,7 +3,7 @@
     <section>
       <div class="col1">
         <router-link to="dashboard">
-          <h3>inVue</h3>
+          <h3>show me app!</h3>
         </router-link>
         <ul class="inline">
           <li>
@@ -31,7 +31,7 @@ export default {
         .signOut()
         .then(() => {
           this.$store.dispatch("clearData");
-          this.$router.push("/login");
+          this.$router.push("/auth");
         })
         .catch(err => {
           console.log(err);

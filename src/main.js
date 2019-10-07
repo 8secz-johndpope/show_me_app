@@ -6,6 +6,7 @@ import router from "./router";
 import { store } from "./store.js";
 const fb = require("./firebaseConfig.js");
 
+
 Vue.config.productionTip = false;
 
 let app;

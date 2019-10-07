@@ -7,7 +7,7 @@
     </transition>
     <section>
       <div class="col1">
-        <h1>inVue</h1>
+        <h1>show me app!</h1>
       </div>
       <div class="col2" :class="{ 'signup-form': !showLoginForm && !showForgotPassword }">
         <form v-if="showLoginForm" @submit.prevent>
@@ -35,7 +35,7 @@
           <h1>Get Started</h1>
 
           <label for="name">Name</label>
-          <input v-model.trim="signupForm.name" type="text" placeholder="inVue name" id="name">
+          <input v-model.trim="signupForm.name" type="text" placeholder="show me app! name" id="name">
           
           <label for="title">Title</label>
           <input v-model.trim="signupForm.title" type="text" placeholder="Company" id="title">
