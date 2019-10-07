@@ -12,6 +12,7 @@
           <li>
             <router-link to="settings">Settings</router-link>
           </li>
+          <input type="search" placeholder="検索">
           <li>
             <a @click="logout">Logout</a>
           </li>
@@ -21,6 +22,9 @@
   </header>
 </template>
 <style scoped>
+.col-1{
+  display: inline-block;
+}
 li {
   display: inline-block;
   width: 25%;

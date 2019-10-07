@@ -1,8 +1,12 @@
 <template>
   <div id="dashboard">
     <section>
-      <div class="col1">
-        <div class="profile">
+      <div class="boxContainer">
+   <div class="col1 box">
+     testest
+      </div>
+      <div class="col2 box">
+                <div class="profile">
           <h5>{{ userProfile.name }}</h5>
           <p>{{ userProfile.title }}</p>
           <div class="create-post">
@@ -14,7 +18,6 @@
               <div class="upload-btn-wrapper">
                 <label class="custom-file-upload">
                   <input type="file" @change="onFileSelected" accept=".png, .jpg, .jpeg">
-                  Upload Image
                 </label>
               </div>
               <span id="file-selected" v-if="this.selectedFile">{{this.selectedFile.name}}</span>
@@ -26,8 +29,6 @@
             </form>
           </div>
         </div>
-      </div>
-      <div class="col2">
         <transition name="fade">
           <div v-if="hiddenPosts.length" @click="showNewPosts" class="hidden-posts">
             <p>
@@ -41,7 +42,8 @@
         </transition>
         <div v-if="posts.length">
           <div v-for="post in posts" class="post" v-bind:key="post.id">
-            <h5>{{ post.userName }}</h5>
+             <!-- <h5><router-link to="post.userId">{{ post.userName }}</router-link></h5>< -->
+            <h5>{{ post.userName }}</h5><!-- リンクに飛ぶようにする -->
             <span>{{ post.createdOn | formatDate }}</span>
             <img :src="post.imageUrl" v-if="post.imageUrl != undefined">
             <p>{{ post.content | trimLength }}</p>
@@ -51,7 +53,6 @@
               </li>
               <li>
                 <a @click="openCommentModal(post)">comments {{ post.comments }}</a>
-                <!-- comment modal -->
                 <transition name="fade">
                   <div v-if="showCommentModal" class="c-modal">
                     <div class="c-container">
@@ -74,7 +75,6 @@
               </li>
               <li>
                 <a @click="viewPost(post)">view full post</a>
-                <!-- post modal -->
                 <transition name="fade">
                   <div v-if="showPostModal" class="p-modal">
                     <div class="p-container">
@@ -115,12 +115,36 @@
           <p class="no-results">There are currently no posts</p>
         </div>
       </div>
+        <div class="col3 box">
+     testest
+      </div>
+</div>
+     
     </section>
   </div>
 </template>
 <style scoped>
+
 li{
   list-style: none
+}
+
+.box{
+  float: left;
+}
+.col1{
+  width: 25%;
+  background-color: blue
+}
+.col2{
+  padding-left: 50px;
+  background-color: aqua;
+}
+.col3{
+    padding-left: 70px;
+}
+.boxContainer{
+  overflow: hidden;
 }
 </style>
 
@@ -128,6 +152,8 @@ li{
 import { mapState } from "vuex";
 import moment from "moment";
 const fb = require("../firebaseConfig.js");
+
+
 
 export default {
   data() {

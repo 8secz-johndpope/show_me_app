@@ -33,3 +33,4 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
 >相手のプロフィール画面に行けばフォローできる
 >プログラミングという項目を自分のプロフィール欄に追加
 >プッシュ通知
+>画像をロードしようとすると表示されない画像が出てくる

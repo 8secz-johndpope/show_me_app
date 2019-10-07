@@ -46,7 +46,9 @@ router.beforeEach((to, from, next) => {
     next("/auth");
   } else if (currentUser && to.name == "Auth") {
     router.push({ name: "Dashboard" });
+    console.log(currentUser);
     next("/dashboard");
+
   } else if (requiresAuth && currentUser) {
     next();
   } else {
